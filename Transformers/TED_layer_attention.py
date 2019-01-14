@@ -1,6 +1,7 @@
 from .layers import *
 import ipdb
 
+
 #TODO
 class TransformerEncoder(t.nn.Module):
     def __init__(self, hidden_size, num_head, dropout, num_step):

@@ -1,4 +1,5 @@
 import fire
+import torch as t
 
 
 def train(**kwargs):
@@ -10,3 +11,4 @@ def inference(**kwargs):
 
 if __name__ == '__main__':
     fire.Fire()
+t.nn.Embedding

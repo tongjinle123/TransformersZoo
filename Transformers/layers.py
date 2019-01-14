@@ -34,14 +34,17 @@ class Embedding(t.nn.Module):
     def __init__(self, embedding_num, embedding_size, max_lenth, max_batch_size, dropout, padding_idx=0):
         super(Embedding, self).__init__()
         self.word_embedding = t.nn.Embedding(embedding_num, embedding_size, padding_idx)
-        self.position_embedding = t.nn.Embedding(max_lenth, embedding_size)
+        self.position_embedding = t.nn.Embedding(max_lenth, embedding_size).from_pretrained(
+            get_sinusoid_encoding_table(embedding_num, embedding_size, padding_idx=padding_idx),
+            freeze=True
+        )
         self.layer_norm = t.nn.LayerNorm(embedding_size)
         self.dropout = t.nn.Dropout(dropout)
         self.init_position_feature(max_lenth, max_batch_size)
 
     def init_position_feature(self, max_lenth, max_batch_size):
         ## register postion_feature
-        position_feature = t.arange(max_lenth, dtype=t.long)
+        position_feature = t.arange(1, max_lenth+1, dtype=t.long)
         position_feature.unsqueeze_(0)
         position_feature = position_feature.expand((max_batch_size, max_lenth))
         self.register_buffer('position_feature', position_feature)
