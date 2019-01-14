@@ -3,17 +3,16 @@ TransformerZoo
 a collection of transformers in pytorch 1.0
 
 
-TED done &radic;
+TED ✔
 
-UTED 口
+UTED ⬛
 
-TED relative position encoding 口
+TED relative position encoding ⬛
 
-TED layer attention 口
+TED layer attention ⬛ 
 
-TD 口
+TD ⬛ 
 
-Bert 口
-
+Bert ⬛ 
 
 
