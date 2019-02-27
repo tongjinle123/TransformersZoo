@@ -3,11 +3,11 @@ TransformerZoo
 a collection of transformers in pytorch 1.0
 
 
-✅ TED
+✅ Transformer Encoder-Decoder
 
-☑️ UTED 
+☑️ Universal TED 
 
-☑️ TED relative position encoding 
+☑️ TED relative position encoding (Transformer-XL)
 
 ☑️ TED layer attention 
 
